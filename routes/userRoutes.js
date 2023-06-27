@@ -41,7 +41,7 @@ router.post("/", createUserValid, function (req, res, next) {
 });
 
 // PUT /api/users/:id
-router.put("/:id", function (req, res, next) {
+router.put("/:id", updateUserValid, function (req, res, next) {
   const userId = req.params.id;
   const updatedUser = req.body;
   const result = userService.updateUser(updatedUser, userId);
